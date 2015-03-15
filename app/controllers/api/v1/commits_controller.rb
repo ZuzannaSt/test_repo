@@ -6,12 +6,12 @@ class Api::V1::CommitsController < ApiController
   end
 
   def show
-    respond_with(commit: @respond ? @respond : [])
+    respond_with(commit: @commit ? @commit : [])
   end
 
   def destroy
-    if @respond
-      @respond.destroy
+    if @commit
+      @commit.destroy
       render json: {}, status: 200
     else
       render json: { error: "Commit could not be deleted."}, status: 422
@@ -20,7 +20,7 @@ class Api::V1::CommitsController < ApiController
 
   private
     def set_commit
-      @respond = Commit.find_by(id: params[:id])
+      @commit = Commit.find_by(id: params[:id])
     end
 end
 

@@ -6,9 +6,9 @@ describe Commit do
 
   it { should respond_to(:name) }
 
-  it "checks if commit name is Test Commit" do
-    expect(@commit.name).to eq("Test Commit")
-  end
+  # it "checks if commit name is Test Commit" do
+  #   expect(@commit.name).to eq("Test Commit")
+  # end
 
   it "should belong to user" do
     expect(Commit.reflect_on_association(:user).macro).to eq(:belongs_to)

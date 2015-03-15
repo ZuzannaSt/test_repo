@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :commit do
-    name "Test Commit"
-    hash_string "Test String"
-    user nil
-    project nil
-    branch nil
+    name { Faker::Company.catch_phrase }
+    hash_string { Faker::Lorem.characters(40) }
+    user 
+    project
+    branch
   end
 
 end

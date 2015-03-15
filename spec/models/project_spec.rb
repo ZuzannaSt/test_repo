@@ -6,9 +6,9 @@ describe Project do
 
   it { should respond_to(:name) }
 
-  it "checks if project name is Test Project" do
-    expect(@project.name).to eq("Test Project")
-  end
+  # it "checks if project name is Test Project" do
+  #   expect(@project.name).to eq("Test Project")
+  # end
 
   it "should have many users" do 
     expect(Project.reflect_on_association(:users).macro).to eq(:has_many)

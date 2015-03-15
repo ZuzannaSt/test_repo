@@ -7,13 +7,13 @@ describe User do
   it { should respond_to(:email) }
   it { should respond_to(:name)}
 
-  it "#email returns a string" do
-    expect(@user.email).to match 'test@example.com'
-  end
+  # it "#email returns a string" do
+  #   expect(@user.email).to match 'test@example.com'
+  # end
 
-  it "#name returns a string" do
-    expect(@user.name).to match 'Test User'
-  end
+  # it "#name returns a string" do
+  #   expect(@user.name).to match 'Test User'
+  # end
 
   it "should have many projects" do 
     expect(User.reflect_on_association(:projects).macro).to eq(:has_many)

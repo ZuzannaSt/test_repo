@@ -5,6 +5,12 @@ Rails.application.routes.draw do
       resources :commits
       resources :branches
     end
+
+    scope module: :v2, constraints: ApiConstraints.new(version: 2, default: :true) do      
+      resources :projects
+      resources :commits
+      resources :branches
+    end
   end
 
   root to: 'visitors#index'
